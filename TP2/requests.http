@@ -1,0 +1,22 @@
+GET http://localhost:3000/health
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "address": "Av alem 2247",
+  "items": [{ "size": "L", "toppings": ["extra cheddar"] }]
+}
+
+###
+GET http://localhost:3000/orders
+
+###
+GET http://localhost:3000/orders?status=created
+
+###
+GET http://localhost:3000/orders/{{ORDER_ID}}
+
+###
+POST http://localhost:3000/orders/{{ORDER_ID}}/cancel
